@@ -1,6 +1,6 @@
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import express, { Request, Response } from "express";
+import express, { NextFunction, Request, Response } from "express";
 import StatusCodes from "http-status-codes";
 import routes from "./routes";
 
@@ -15,25 +15,26 @@ app.use(cookieParser());
 //#endregion
 
 //#region API routes
-app.use("", routes);
+app.use(routes);
 
 // Error handling
-app.use((err: Error, _: Request, res: Response) => {
+app.use((err: Error, _: Request, res: Response, __: NextFunction) => {
   console.error(err, true);
 
   return res.status(StatusCodes.BAD_REQUEST).json({
     error: err.message,
   });
 });
+
+// Static images
+app.use(express.static("src/assets"));
 //#endregion
 
 //#region Static file
-// TODO serve image
 // const viewsDir = path.join(__dirname, "views");
 // app.set("views", viewsDir);
 
 // const staticDir = path.join(__dirname, "public");
-// app.use(express.static(staticDir));
 
 // app.get("*", (_: Request, res: Response) => {
 //   res.sendFile("index.html", { root: viewsDir });

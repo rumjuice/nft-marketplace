@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Cibul",
-    "image": "https://gateway.ipfs.io/ipfs/QmY31k7nkaSirPZDeKW1Q98Jej1V4wGedSg6UDzADzdCY2",
+    "image": "http://localhost:8080/images/cibul.jpg",
     "description": "Ready to take over the world! yawn",
     "attributes": [
       {
