@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Cibul",
+    "image": "https://gateway.ipfs.io/ipfs/QmY31k7nkaSirPZDeKW1Q98Jej1V4wGedSg6UDzADzdCY2",
+    "description": "Ready to take over the world! yawn",
+    "attributes": [
+      {
+        "trait_type": "Personality",
+        "value": "100"
+      },
+      {
+        "trait_type": "Snack",
+        "value": "90"
+      },
+      {
+        "trait_type": "Skill",
+        "value": "90"
+      }
+    ]
+  }
+]

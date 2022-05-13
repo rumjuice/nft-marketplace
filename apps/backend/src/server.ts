@@ -1,6 +1,6 @@
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import express, { NextFunction, Request, Response } from "express";
+import express, { Request, Response } from "express";
 import StatusCodes from "http-status-codes";
 import routes from "./routes";
 
@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use("", routes);
 
 // Error handling
-app.use((err: Error, _: Request, res: Response, _next: NextFunction) => {
+app.use((err: Error, _: Request, res: Response) => {
   console.error(err, true);
 
   return res.status(StatusCodes.BAD_REQUEST).json({
