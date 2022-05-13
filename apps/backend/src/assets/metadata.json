@@ -3,19 +3,59 @@
     "id": 1,
     "name": "Cibul",
     "image": "http://localhost:8080/images/cibul.jpg",
-    "description": "Ready to take over the world! yawn",
+    "description": "A true entertainer that always comes up with different ways to make you laugh",
     "attributes": [
       {
         "trait_type": "Personality",
-        "value": "100"
+        "value": "Bossy"
       },
       {
         "trait_type": "Snack",
-        "value": "90"
+        "value": "Creamy Treats"
       },
       {
         "trait_type": "Skill",
-        "value": "90"
+        "value": "Fetch"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Bembi",
+    "image": "http://localhost:8080/images/bembi.jpg",
+    "description": "This cat loves consistency. He will nag you at promises that you've made to him",
+    "attributes": [
+      {
+        "trait_type": "Personality",
+        "value": "Patient"
+      },
+      {
+        "trait_type": "Snack",
+        "value": "Gecko"
+      },
+      {
+        "trait_type": "Skill",
+        "value": "Janitor"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Pico",
+    "image": "http://localhost:8080/images/pico.jpg",
+    "description": "The businesswoman cat that has food-chains and stores around the world",
+    "attributes": [
+      {
+        "trait_type": "Personality",
+        "value": "Basic"
+      },
+      {
+        "trait_type": "Snack",
+        "value": "Gizzards"
+      },
+      {
+        "trait_type": "Skill",
+        "value": "Ninja"
       }
     ]
   }
