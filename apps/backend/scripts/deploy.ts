@@ -14,12 +14,19 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const Greeter = await ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello, Hardhat!");
+  // const Greeter = await ethers.getContractFactory("Greeter");
+  // const greeter = await Greeter.deploy("Hello, Hardhat!");
 
-  await greeter.deployed();
+  // await greeter.deployed();
 
-  console.log("Greeter deployed to:", greeter.address);
+  // console.log("Greeter deployed to:", greeter.address);
+
+  const MengNFT = await ethers.getContractFactory("MengNFT");
+  const nft = await MengNFT.deploy();
+
+  await nft.deployed();
+
+  console.log("MengNFT deployed to:", nft.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
@@ -28,3 +35,5 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+// Local contract address: 0x5FbDB2315678afecb367f032d93F642f64180aa3
