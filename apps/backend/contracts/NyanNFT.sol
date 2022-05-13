@@ -1,22 +1,23 @@
-//SPDX-License-Identifier: Unlicense
+//SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
 import "hardhat/console.sol";
 
-contract NyanNFT {
-    string private greeting;
+contract NyanNFT is ERC721URIStorage {
+  using Counters for Counters.Counter;
+  Counters.Counter private _tokenIds;
 
-    constructor(string memory _greeting) {
-        console.log("Deploying a Greeter with greeting:", _greeting);
-        greeting = _greeting;
-    }
+  constructor() ERC721("Nyan", "NYAN") {}
 
-    function greet() public view returns (string memory) {
-        return greeting;
-    }
+  function mint(address owner, string memory tokenURI) external {
+    _tokenIds.increment();
 
-    function setGreeting(string memory _greeting) public {
-        console.log("Changing greeting from '%s' to '%s'", greeting, _greeting);
-        greeting = _greeting;
-    }
+    uint256 itemId = _tokenIds.current();
+    _mint(owner, itemId);
+    _setTokenURI(itemId, tokenURI);
+
+    // return newItemId;
+  }
 }
