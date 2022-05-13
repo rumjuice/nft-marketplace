@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs"
+  },
+  "include": ["src/**/*.ts", "./scripts/**/*.ts", "./typechain"],
+  "exclude": ["src/public/"],
+  "files": ["./hardhat.config.ts"]
+}
