@@ -1,8 +1,8 @@
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import express, { Request, Response } from "express";
+import express, { NextFunction, Request, Response } from "express";
 import StatusCodes from "http-status-codes";
-import path from "path";
+import routes from "./routes";
 
 // Initialize express
 const app = express();
@@ -15,10 +15,10 @@ app.use(cookieParser());
 //#endregion
 
 //#region API routes
-// app.use('', apiRouter);
+app.use("", routes);
 
 // Error handling
-app.use((err: Error, _: Request, res: Response) => {
+app.use((err: Error, _: Request, res: Response, _next: NextFunction) => {
   console.error(err, true);
 
   return res.status(StatusCodes.BAD_REQUEST).json({
@@ -29,15 +29,15 @@ app.use((err: Error, _: Request, res: Response) => {
 
 //#region Static file
 // TODO serve image
-const viewsDir = path.join(__dirname, "views");
-app.set("views", viewsDir);
+// const viewsDir = path.join(__dirname, "views");
+// app.set("views", viewsDir);
 
-const staticDir = path.join(__dirname, "public");
-app.use(express.static(staticDir));
+// const staticDir = path.join(__dirname, "public");
+// app.use(express.static(staticDir));
 
-app.get("*", (_: Request, res: Response) => {
-  res.sendFile("index.html", { root: viewsDir });
-});
+// app.get("*", (_: Request, res: Response) => {
+//   res.sendFile("index.html", { root: viewsDir });
+// });
 //#endregion
 
 export default app;
