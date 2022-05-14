@@ -9,8 +9,10 @@
     "start": "ts-node ./src",
     "start:dev": "nodemon",
     "hardhat:node": "npx hardhat node",
-    "deploy": "npx hardhat run scripts/deploy.ts --network ganache",
-    "mint": "npx hardhat run scripts/mint.ts --network ganache"
+    "deploy:dev": "npx hardhat run scripts/deploy.ts --network ganache",
+    "mint:dev": "npx hardhat run scripts/mint.ts --network ganache",
+    "deploy": "npx hardhat run scripts/deploy.ts --network rinkeby",
+    "mint": "npx hardhat run scripts/mint.ts --network rinkeby"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.6",
@@ -32,6 +34,7 @@
   "dependencies": {
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
+    "ethers": "^5.6.6",
     "express": "^4.18.1",
     "http-status-codes": "^2.2.0"
   },
@@ -43,6 +46,6 @@
     "ignore": [
       "src/public"
     ],
-    "exec": "./node_modules/.bin/ts-node -r ./src"
+    "exec": "ts-node -r ./src"
   }
 }

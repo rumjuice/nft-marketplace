@@ -1,11 +1,6 @@
 import { ethers } from "hardhat";
 import metadata from "../src/assets/metadata.json";
 
-// const friends = [
-//   "0x9321ef8Ccf26Ca4d64F7213076B3BAb0F6253E96",
-//   "0x4Ea580c6AAA91c7Ed096f3dF14AFEEE76900E59F",
-//   "0x079F340C9990257546Ac89E22C13E5ee203F7c09",
-// ];
 const contractAddress = "0x5f74042a94A4E03C47040f8eE5a05b32CEed097b";
 const myAddress = "0x9321ef8Ccf26Ca4d64F7213076B3BAb0F6253E96";
 
@@ -21,16 +16,6 @@ async function main() {
       nonce: nonce + i,
     });
   }
-  // metadata.forEach((m) => {
-
-  // });
-  // for (let i = 0; i < friends.length; i++) {
-  //   const tokenURI =
-  //     "https://gateway.ipfs.io/ipfs/Qme7uRMyQ77MQXSKZdtcVQ7ew8ATu6mnPzubJ2xb75Q8Fx";
-  //   await nft.awardItem(friends[i], tokenURI, {
-  //     nonce: nonce + i,
-  //   });
-  // }
 
   console.log("Minting is complete!");
 }

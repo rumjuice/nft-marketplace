@@ -4,7 +4,7 @@ import server from "./server";
 dotenv.config();
 
 const message = "Express server started on port: ",
-  port = process.env.PORT || 3000;
+  port = process.env.PORT || 8080;
 
 // Start api server
 server.listen(port, () => {
