@@ -21,6 +21,9 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 const config: HardhatUserConfig = {
   solidity: "0.8.13",
   networks: {
+    ganache: {
+      url: process.env.GANACHE_URL || "",
+    },
     rinkeby: {
       url: process.env.RINKEBY_URL || "",
       accounts:

@@ -13,14 +13,6 @@ async function main() {
   // manually to make sure everything is compiled
   // await hre.run('compile');
 
-  // We get the contract to deploy
-  // const Greeter = await ethers.getContractFactory("Greeter");
-  // const greeter = await Greeter.deploy("Hello, Hardhat!");
-
-  // await greeter.deployed();
-
-  // console.log("Greeter deployed to:", greeter.address);
-
   const MengNFT = await ethers.getContractFactory("MengNFT");
   const nft = await MengNFT.deploy();
 
@@ -37,3 +29,4 @@ main().catch((error) => {
 });
 
 // Local contract address: 0x5FbDB2315678afecb367f032d93F642f64180aa3
+// Ganache contract address: 0x5f74042a94A4E03C47040f8eE5a05b32CEed097b

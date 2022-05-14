@@ -9,7 +9,8 @@
     "start": "ts-node ./src",
     "start:dev": "nodemon",
     "hardhat:node": "npx hardhat node",
-    "deploy": "npx hardhat run scripts/deploy.ts"
+    "deploy": "npx hardhat run scripts/deploy.ts --network ganache",
+    "mint": "npx hardhat run scripts/mint.ts --network ganache"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.6",
