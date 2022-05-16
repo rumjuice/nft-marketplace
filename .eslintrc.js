@@ -6,14 +6,17 @@ module.exports = {
     node: true,
   },
   parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint"],
+  plugins: ["@typescript-eslint", "react"],
   extends: [
     "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
     "plugin:prettier/recommended",
   ],
   parserOptions: {
     project: "./tsconfig.json",
   },
   ignorePatterns: [".eslintrc.js"],
-  rules: {},
+  rules: {
+    "react/react-in-jsx-scope": "off",
+  },
 };
