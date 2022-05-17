@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 
 type Props = {
   name: string;
@@ -22,4 +22,4 @@ const Card: FC<Props> = ({ name, symbol, id, img }) => {
   );
 };
 
-export default Card;
+export default memo(Card);

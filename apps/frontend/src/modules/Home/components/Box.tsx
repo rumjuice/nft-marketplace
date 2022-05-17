@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 
 type Props = {
   name: string;
@@ -13,4 +13,4 @@ const Box: FC<Props> = ({ name, value }) => {
   );
 };
 
-export default Box;
+export default memo(Box);
