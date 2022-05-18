@@ -1,13 +1,29 @@
 import { ReactElement } from "react";
+import {
+  BrowserRouter,
+  Navigate,
+  Route,
+  RouteObject,
+  Routes,
+} from "react-router-dom";
 import Header from "./modules/Header";
-import List from "./modules/Home/views";
+import HomeRoutes from "./modules/Home/Route";
 
 function App(): ReactElement {
+  const routes: RouteObject[] = [...HomeRoutes];
+
   return (
-    <div className="flex flex-col items-center h-screen w-screen bg-slate-50 pb-4">
-      <Header />
-      <List />
-    </div>
+    <BrowserRouter>
+      <div className="flex flex-col items-center h-screen w-screen bg-slate-50 pb-4">
+        <Header />
+        <Routes>
+          {routes.map((route) => (
+            <Route key={route.path} path={route.path} element={route.element} />
+          ))}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

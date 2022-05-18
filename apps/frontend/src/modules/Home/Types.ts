@@ -19,4 +19,4 @@ export type Metadata = {
     value: string;
   }[];
 };
-export type TokenDetail = Metadata & Pick<Token, "owner">;
+export type TokenDetail = Metadata & Pick<Token, "owner"> & Pick<NFT, "symbol">;

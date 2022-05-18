@@ -5,10 +5,14 @@ type Props = {
   symbol: string;
   id: number;
   img: string;
+  onClick?(): void;
 };
-const Card: FC<Props> = ({ name, symbol, id, img }) => {
+const Card: FC<Props> = ({ name, symbol, id, img, onClick }) => {
   return (
-    <div className="flex flex-col rounded-md shadow-md bg-white">
+    <div
+      className="flex flex-col rounded-md shadow-md bg-white cursor-pointer"
+      onClick={onClick}
+    >
       <img
         src={img}
         alt={name}

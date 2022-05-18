@@ -1,9 +1,11 @@
 import { FC, useCallback, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Box, Card } from "../components";
 import { getAllNft, getMetadata } from "../repos";
-import { NFT, Token, TokenDetail } from "../Types";
+import { NFT, TokenDetail } from "../Types";
 
 const List: FC = () => {
+  const navigate = useNavigate();
   const [nft, setNft] = useState<NFT>();
   const [tokenDetail, setTokenDetail] = useState<TokenDetail[]>();
 
@@ -13,7 +15,7 @@ const List: FC = () => {
 
   useEffect(() => {
     if (nft) {
-      fetchMetadata(nft.tokens);
+      fetchMetadata(nft);
     }
   }, [nft]);
 
@@ -26,13 +28,17 @@ const List: FC = () => {
     }
   }, []);
 
-  const fetchMetadata = useCallback(async (_tokens: Token[]) => {
+  const fetchMetadata = useCallback(async (_nft: NFT) => {
     const _tokenDetail: TokenDetail[] = [];
 
-    for (const token of _tokens) {
+    for (const token of _nft.tokens) {
       try {
         const data = await getMetadata(token.id);
-        _tokenDetail.push({ ...data, owner: token.owner });
+        _tokenDetail.push({
+          ...data,
+          owner: token.owner,
+          symbol: _nft.symbol,
+        });
       } catch (error) {
         console.error(error);
       }
@@ -59,6 +65,7 @@ const List: FC = () => {
               name={token.name}
               symbol={nft.symbol}
               id={token.id}
+              onClick={() => navigate("/nft", { state: token })}
             />
           ))}
       </div>
