@@ -30,15 +30,4 @@ app.use((err: Error, _: Request, res: Response, __: NextFunction) => {
 app.use(express.static("src/assets"));
 //#endregion
 
-//#region Static file
-// const viewsDir = path.join(__dirname, "views");
-// app.set("views", viewsDir);
-
-// const staticDir = path.join(__dirname, "public");
-
-// app.get("*", (_: Request, res: Response) => {
-//   res.sendFile("index.html", { root: viewsDir });
-// });
-//#endregion
-
 export default app;
