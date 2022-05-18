@@ -1,46 +1,41 @@
-# Advanced Sample Hardhat Project
+# NFT Marketplace
 
-This project demonstrates an advanced Hardhat use case, integrating other tools commonly used alongside Hardhat in the ecosystem.
+MENG NFT Marketplace, running on local Ganache server
 
-The project comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts. It also comes with a variety of other tools, preconfigured to work with the project code.
+### As part of Advanced Blockchain Technologies Assignment
 
-Try running some of the following tasks:
+Author: **Ramdhani Rachmansyah -- 101391780**
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-npx hardhat help
-REPORT_GAS=true npx hardhat test
-npx hardhat coverage
-npx hardhat run scripts/deploy.ts
-TS_NODE_FILES=true npx ts-node scripts/deploy.ts
-npx eslint '**/*.{js,ts}'
-npx eslint '**/*.{js,ts}' --fix
-npx prettier '**/*.{json,sol,md}' --check
-npx prettier '**/*.{json,sol,md}' --write
-npx solhint 'contracts/**/*.sol'
-npx solhint 'contracts/**/*.sol' --fix
-```
+George Brown College
 
-# Etherscan verification
+#
 
-To try out Etherscan verification, you first need to deploy a contract to an Ethereum network that's supported by Etherscan, such as Ropsten.
+## Instruction
 
-In this project, copy the .env.example file to a file named .env, and then edit it to fill in the details. Enter your Etherscan API key, your Ropsten node URL (eg from Alchemy), and the private key of the account which will send the deployment transaction. With a valid .env file in place, first deploy your contract:
+- Make sure you have _Ganache_ installed and running
+- Deploy the contract: `yarn backend deploy:ganache`
+- Copy the contract address to the `.env.sample` file on `apps/backend` directory
+- Input your wallet address to the env file
+- Rename it to `.env`
+- Mint the token: `yarn backend mint:ganache`
+- Start frontend and backend: `yarn start`
 
-```shell
-hardhat run --network ropsten scripts/deploy.ts
-```
+## Project features
 
-Then, copy the deployment address and paste it in to replace `DEPLOYED_CONTRACT_ADDRESS` in this command:
+1. List all NFTs that are minted on the Ganache blockchain
+2. View metadata of the NFT
+3. Metadata is saved on the json file and served via api
+4. Get all NFT api will query all ERC721 Transfer event through the blockchain and filter the specified contract address. Then call the `Contract.tokenUri()` method to get the TokenUri of each token id
+5. Project structured using Yarn workspace (mono-repo)
 
-```shell
-npx hardhat verify --network ropsten DEPLOYED_CONTRACT_ADDRESS "Hello, Hardhat!"
-```
+## Stack
 
-# Performance optimizations
+### Front-end
 
-For faster runs of your tests and scripts, consider skipping ts-node's type checking by setting the environment variable `TS_NODE_TRANSPILE_ONLY` to `1` in hardhat's environment. For more details see [the documentation](https://hardhat.org/guides/typescript.html#performance-optimizations).
+- React TypeScript, ky, Tailwind
+
+### Back-end
+
+- Node TypeScript, Express, Hardhat, OpenZeppelin
+
+---

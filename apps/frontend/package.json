@@ -1,6 +1,9 @@
 {
   "name": "@app/frontend",
   "version": "0.0.1",
+  "description": "Advanced Blockchain Technology Assignment - Frontend app",
+  "author": "Ramdhani Rachmansyah",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "ky": "^0.30.0",

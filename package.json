@@ -12,7 +12,7 @@
     "prestart": "yarn",
     "backend": "yarn workspace @app/backend",
     "frontend": "yarn workspace @app/frontend",
-    "start": "concurrently --kill-others-on-fail \"yarn backend start:dev\" \"yarn frontend start\""
+    "start": "concurrently --kill-others-on-fail \"yarn backend start\" \"yarn frontend start\""
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.33.0",

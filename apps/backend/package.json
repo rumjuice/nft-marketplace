@@ -9,8 +9,8 @@
     "start": "ts-node ./src",
     "start:dev": "nodemon",
     "hardhat:node": "npx hardhat node",
-    "deploy:dev": "npx hardhat run scripts/deploy.ts --network ganache",
-    "mint:dev": "npx hardhat run scripts/mint.ts --network ganache",
+    "deploy:ganache": "npx hardhat run scripts/deploy.ts --network ganache",
+    "mint:ganache": "npx hardhat run scripts/mint.ts --network ganache",
     "deploy": "npx hardhat run scripts/deploy.ts --network rinkeby",
     "mint": "npx hardhat run scripts/mint.ts --network rinkeby"
   },
